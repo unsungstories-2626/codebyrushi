@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompting an AI coding agent well — CodeByRushi</title>
+<meta name="description" content="The difference between a prompt that stalls an AI coding agent and one that actually ships working code.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2666714187039482"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>codebyrushi</a>
+    <button class="nav-toggle" aria-expanded="false">menu</button>
+    <nav class="primary-nav">
+      <a href="index.html">notes</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article>
+      <header class="article-head">
+        <p class="article-meta">note 04 · 8 min read · updated Sept 2026</p>
+        <h1>Prompting an AI coding agent well</h1>
+      </header>
+
+      <div class="article-body">
+        <p>I build things with an AI coding agent every single day, and the single biggest skill I've had to learn has nothing to do with programming languages — it's learning how to ask for what I want. A vague prompt gets a vague result. A specific one gets something close to done on the first try.</p>
+
+        <h2>The prompt that stalls</h2>
+        <p>Here's a prompt I actually used to write, back when I didn't know better:</p>
+
+        <blockquote>"Make a login page."</blockquote>
+
+        <p>Technically answerable, practically useless. The agent has no idea what framework you're using, what your existing files look like, whether you want email/password or social login, or what "done" even means here. It'll guess — and every wrong guess costs you a round trip of reading code, realizing it's not what you meant, and re-explaining.</p>
+
+        <h2>The prompt that ships</h2>
+        <p>Compare that to this:</p>
+
+        <blockquote>"Add a login form to <code>src/pages/Login.jsx</code>. It should match the existing style in <code>src/pages/Signup.jsx</code> — same layout, same Tailwind classes. Fields: email and password, both required. On submit, call the existing <code>loginUser()</code> function from <code>src/api/auth.js</code> and show its error message under the form if it rejects. Don't add a 'remember me' checkbox or social login — just the two fields."</blockquote>
+
+        <p>Same task, dramatically different outcome. This version gives the agent four things a vague prompt never does:</p>
+        <ul>
+          <li><strong>Location</strong> — exactly which file to touch.</li>
+          <li><strong>A reference point</strong> — an existing file to match style and structure against, instead of inventing a new pattern.</li>
+          <li><strong>Constraints</strong> — what to build, and just as importantly, what not to build.</li>
+          <li><strong>The existing pieces to reuse</strong> — so it doesn't reinvent a login function that already exists somewhere else in the project.</li>
+        </ul>
+
+        <h2>Treat it like a loop, not a vending machine</h2>
+        <p>The biggest mindset shift: don't expect one perfect prompt to produce one perfect result. Expect a short loop — ask, read the actual diff it produced, correct one specific thing, ask again. Two or three tight iterations with real feedback beat one giant paragraph trying to anticipate everything up front.</p>
+
+        <h2>Give it the error, not your interpretation of the error</h2>
+        <p>When something breaks, paste the actual error message and the relevant code, not your summary of what you think went wrong. "It's not working" forces the agent to guess at the same problem you're stuck on. The raw traceback (see <a href="article-02.html">reading an error message without panicking</a>) usually gets fixed in one pass.</p>
+
+        <blockquote>Vague in, vague out. The agent isn't reading your mind — it's reading your prompt, plus whatever files you point it at. Specificity is the whole skill.</blockquote>
+
+        <h2>Why this matters more than knowing syntax</h2>
+        <p>You don't need to memorize a language's full syntax to build real things anymore — but you do need to describe what you want with enough precision that "what you want" and "what got built" are the same thing. That's the actual skill underneath "prompting well," and it transfers to every project, every framework, and every future tool that works the same way.</p>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag">ai-agents</span>
+        <span class="tag">workflow</span>
+        <span class="tag">mental-models</span>
+      </div>
+    </article>
+
+    <a href="article-05.html" class="next-note">
+      <span class="next-note-label">next note →</span>
+      <span class="next-note-title">Git, for someone who's never touched a terminal</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 CodeByRushi</span>
+    <nav>
+      <a href="about.html">about</a>
+      <a href="privacy.html">privacy</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

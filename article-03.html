@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What an API is, without the jargon — CodeByRushi</title>
+<meta name="description" content="Two apps talking to each other, explained with a restaurant analogy that actually sticks.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2666714187039482"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>codebyrushi</a>
+    <button class="nav-toggle" aria-expanded="false">menu</button>
+    <nav class="primary-nav">
+      <a href="index.html">notes</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article>
+      <header class="article-head">
+        <p class="article-meta">note 03 · 5 min read · updated Sept 2026</p>
+        <h1>What an API is, without the jargon</h1>
+      </header>
+
+      <div class="article-body">
+        <p>"API" is one of those words that gets thrown around so early in every tutorial that people nod along without ever actually being told what it means. Here's the version I wish someone had given me: an API is a menu.</p>
+
+        <h2>The restaurant analogy</h2>
+        <p>When you sit down at a restaurant, you don't walk into the kitchen and cook your own food. You look at a menu, pick an item by name, and hand that request to a waiter. The kitchen does whatever complicated work is needed and sends back a plate. You never see the recipe, the inventory, or the arguments happening between the chefs — you just get what you asked for, in a predictable format.</p>
+
+        <p>An API — Application Programming Interface — is that menu. It's a fixed list of things one piece of software will do for another, without exposing how it actually does them.</p>
+
+        <h2>What a real request looks like</h2>
+        <p>Say a weather app wants today's forecast. It doesn't calculate weather itself — it asks a weather service's API for it:</p>
+
+        <pre><code>fetch("https://api.example.com/weather?city=Pune")
+  .then(response =&gt; response.json())
+  .then(data =&gt; console.log(data.temperature));</code></pre>
+
+        <p>That URL is the "menu item." The weather service reads the request, does whatever measuring and calculating it needs to internally, and sends back a response — usually as a block of structured text called JSON. The app never needed to know how the forecast was produced, only how to ask for it and how to read what comes back.</p>
+
+        <h2>The vocabulary that goes with it</h2>
+        <ul>
+          <li><strong>Endpoint</strong> — a specific URL that does one job, like <code>/weather</code> or <code>/users/42</code>.</li>
+          <li><strong>Method</strong> — the type of request: <code>GET</code> to fetch something, <code>POST</code> to create something, and a few others that follow the same idea.</li>
+          <li><strong>Request/response</strong> — you send a request (sometimes with extra data attached), and you get a response back, usually as JSON.</li>
+          <li><strong>API key</strong> — a private password-like string that identifies who's asking, so the service can track usage or restrict access.</li>
+        </ul>
+
+        <blockquote>If you remember nothing else: an API is just an agreed-upon way for two programs to ask each other for things, without either one needing to know how the other works internally.</blockquote>
+
+        <h2>Why this clicks once you've called one yourself</h2>
+        <p>APIs stop being an abstract word the moment you make one real request and see actual data come back. Every AI chatbot, every weather widget, every "sign in with Google" button is just this same pattern — a menu, a request, a plate coming back — repeated at every layer of the software you use every day.</p>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag">basics</span>
+        <span class="tag">apis</span>
+        <span class="tag">mental-models</span>
+      </div>
+    </article>
+
+    <a href="article-04.html" class="next-note">
+      <span class="next-note-label">next note →</span>
+      <span class="next-note-title">Prompting an AI coding agent well</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 CodeByRushi</span>
+    <nav>
+      <a href="about.html">about</a>
+      <a href="privacy.html">privacy</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

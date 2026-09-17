@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git, for someone who's never touched a terminal — CodeByRushi</title>
+<meta name="description" content="The four Git commands you need before you need any of the others, explained without assuming you know what a terminal is.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2666714187039482"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>codebyrushi</a>
+    <button class="nav-toggle" aria-expanded="false">menu</button>
+    <nav class="primary-nav">
+      <a href="index.html">notes</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article>
+      <header class="article-head">
+        <p class="article-meta">note 05 · 9 min read · updated Sept 2026</p>
+        <h1>Git, for someone who's never touched a terminal</h1>
+      </header>
+
+      <div class="article-body">
+        <p>Git tutorials love to start with branching diagrams and merge conflicts before you've even saved a single file. That's backwards. Here are the four commands that cover almost everything you need for your first few months, explained as what they actually do, not what they're called.</p>
+
+        <h2>Think of it as a save-point system</h2>
+        <p>A normal "save" overwrites your last save. Git instead keeps a full history of save points, called commits, that you can look back through or return to. You choose exactly when a save point gets created, and you write a short note describing what changed in it.</p>
+
+        <h2>1. <code>git status</code> — what's different right now</h2>
+        <p>Run this any time you're unsure what state your project is in. It lists every file you've changed, added, or deleted since your last save point. Get in the habit of running it before doing anything else — it costs nothing and tells you exactly where you stand.</p>
+
+        <pre><code>git status</code></pre>
+
+        <h2>2. <code>git add</code> — choose what goes into the next save point</h2>
+        <p>Changing five files doesn't mean all five need to be saved together. <code>git add</code> stages the specific files you want included in the next commit — think of it as putting items in a basket before checking out.</p>
+
+        <pre><code>git add index.html
+git add .   # or: stage everything that changed</code></pre>
+
+        <h2>3. <code>git commit</code> — actually create the save point</h2>
+        <p>This takes whatever you staged with <code>git add</code> and locks it in as a permanent point in history, along with a message describing what changed.</p>
+
+        <pre><code>git commit -m "Fix broken login button on mobile"</code></pre>
+
+        <blockquote>Write commit messages for the person who reads them six months from now — probably you. "Fix bug" tells future-you nothing. "Fix broken login button on mobile" tells you exactly what to expect if you ever need to look back.</blockquote>
+
+        <h2>4. <code>git push</code> — send your save points somewhere else</h2>
+        <p>Everything so far happens only on your own machine. <code>git push</code> uploads your commits to a remote copy of the project — usually on GitHub — so they're backed up and visible to anyone else working on it.</p>
+
+        <pre><code>git push</code></pre>
+
+        <h2>The loop, in order</h2>
+        <p>In practice, those four commands run in the same order almost every time:</p>
+        <pre><code>git status          # see what changed
+git add .           # choose what to save
+git commit -m "…"   # save it with a message
+git push            # send it upstream</code></pre>
+
+        <h2>Why this is enough for a long time</h2>
+        <p>Branches, merges, and rebasing are real skills you'll eventually want — but they're solving problems you won't run into on day one. Save-check-commit-push covers the vast majority of what a beginner actually does with Git, and it's a much smaller thing to hold in your head than the full manual makes it look.</p>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag">basics</span>
+        <span class="tag">git</span>
+        <span class="tag">tools</span>
+      </div>
+    </article>
+
+    <a href="index.html" class="next-note">
+      <span class="next-note-label">back to all notes →</span>
+      <span class="next-note-title">Browse the full log</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 CodeByRushi</span>
+    <nav>
+      <a href="about.html">about</a>
+      <a href="privacy.html">privacy</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading an error message without panicking — CodeByRushi</title>
+<meta name="description" content="A five-step way to read any stack trace or error message calmly, in any programming language.">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2666714187039482"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>codebyrushi</a>
+    <button class="nav-toggle" aria-expanded="false">menu</button>
+    <nav class="primary-nav">
+      <a href="index.html">notes</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <article>
+      <header class="article-head">
+        <p class="article-meta">note 02 · 6 min read · updated Sept 2026</p>
+        <h1>Reading an error message without panicking</h1>
+      </header>
+
+      <div class="article-body">
+        <p>The first time a program I wrote threw a fifteen-line wall of red text, I closed the laptop. Not paused, not saved my work — closed it, like the error was a verdict on whether I should be doing this at all. It took me an embarrassingly long time to realize that a stack trace isn't yelling at you. It's the most helpful message your computer will ever send you, and almost nobody teaches you how to read it.</p>
+
+        <p>Here's the five-step method I use now, and it works in Python, JavaScript, Java, or basically anything else that prints a traceback.</p>
+
+        <h2>Step 1 — read the bottom line first</h2>
+        <p>Every stack trace is a chain of "this called that, which called that," ending in the actual failure. The very last line usually names the error type and the message. Skip the middle on your first pass and go straight there.</p>
+
+        <pre><code>Traceback (most recent call last):
+  File "app.py", line 12, in &lt;module&gt;
+    total = price / quantity
+ZeroDivisionError: division by zero</code></pre>
+
+        <p><code>ZeroDivisionError: division by zero</code> is the whole story. Everything above it is just how the program got there.</p>
+
+        <h2>Step 2 — find the line that's actually yours</h2>
+        <p>Long tracebacks often pass through library code you didn't write — a web framework, a package, the language's own internals. Scan for the first file path that matches your project. That's almost always where the real fix belongs, even if the error surfaces deeper down the chain.</p>
+
+        <h2>Step 3 — read the message as a sentence, literally</h2>
+        <p>"Division by zero" means exactly that: somewhere, a number got divided by zero. "NoneType has no attribute 'append'" means a variable you expected to be a list is actually empty. Error messages are painfully literal. Resist the urge to guess a complicated cause before you've taken the message at face value.</p>
+
+        <blockquote>Nine times out of ten, the fix is boring. A variable was empty, a value was the wrong type, or a name was spelled differently than you expected. Look for the boring explanation before the exotic one.</blockquote>
+
+        <h2>Step 4 — shrink the problem until it breaks the same way</h2>
+        <p>If the cause isn't obvious, don't stare at the whole file. Comment out everything except the smallest piece that still reproduces the error. A ten-line reproduction is easier to reason about than a two-hundred-line application, and it's also exactly what you'd paste into a search engine or hand to an AI coding agent.</p>
+
+        <h2>Step 5 — search the exact error text, not your whole problem</h2>
+        <p>Search "ZeroDivisionError: division by zero python", not "why is my calculator app broken." The error type plus the core message is usually specific enough that someone else has already hit it and written down the fix.</p>
+
+        <h2>Why this is worth doing on day one</h2>
+        <p>Panic makes people scroll past the one line that would have told them everything. Once reading a traceback feels like reading a short, literal sentence instead of a threat, debugging stops being the scary part of coding and starts being the part where you actually learn the most.</p>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag">basics</span>
+        <span class="tag">debugging</span>
+        <span class="tag">mental-models</span>
+      </div>
+    </article>
+
+    <a href="article-03.html" class="next-note">
+      <span class="next-note-label">next note →</span>
+      <span class="next-note-title">What an API is, without the jargon</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 CodeByRushi</span>
+    <nav>
+      <a href="about.html">about</a>
+      <a href="privacy.html">privacy</a>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
